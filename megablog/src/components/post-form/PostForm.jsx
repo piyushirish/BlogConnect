@@ -54,7 +54,7 @@ export default function PostForm({ post }) {
             const dbPost = await appwriteService.createPost({
                 ...data,
                 userId: userData.$id,
-                featuredImage: fileId, // May be null, but ensures field exists
+                featuredImage: fileId ?? null, // May be null, but ensures field exists
             });
     
             if (dbPost) {
